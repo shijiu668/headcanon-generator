@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useMemo } from 'react';
 import { headcanons } from '@/data/headcanons';
 
 export default function Home() {
@@ -8,7 +8,7 @@ export default function Home() {
   const [headcanon, setHeadcanon] = useState('');
   const [buttonGradient, setButtonGradient] = useState('from-blue-500 to-blue-600');
 
-  const gradientColors = [
+  const gradientColors = useMemo(() => [
     'from-blue-500 to-blue-600',
     'from-purple-500 to-pink-500',
     'from-green-400 to-cyan-500',
@@ -17,7 +17,7 @@ export default function Home() {
     'from-indigo-500 to-purple-500',
     'from-cyan-500 to-blue-500',
     'from-emerald-500 to-green-500'
-  ];
+  ], []);
 
   const generateHeadcanon = useCallback(() => {
     const randomIndex = Math.floor(Math.random() * headcanons.length);
@@ -87,7 +87,7 @@ export default function Home() {
           <div className="space-y-8">
             <div>
               <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">Enter a Character Name</h3>
-              <p className="text-gray-600 dark:text-gray-400">Start by typing your character's name in the input field. This is optional - if you leave it blank, the generator will use "This character" instead.</p>
+              <p className="text-gray-600 dark:text-gray-400">Start by typing your character&apos;s name in the input field. This is optional - if you leave it blank, the generator will use &quot;This character&quot; instead.</p>
             </div>
             <div>
               <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">Generate Ideas</h3>
@@ -105,7 +105,7 @@ export default function Home() {
           <div className="space-y-8">
             <div>
               <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">Instant Inspiration</h3>
-              <p className="text-gray-600 dark:text-gray-400">Break through writer's block and find instant inspiration with our diverse collection of character traits and quirks.</p>
+              <p className="text-gray-600 dark:text-gray-400">Break through writer&apos;s block and find instant inspiration with our diverse collection of character traits and quirks.</p>
             </div>
             <div>
               <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">Character Development</h3>

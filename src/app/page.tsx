@@ -26,7 +26,7 @@ export default function Home() {
     setHeadcanon(`${prefix} ${selectedHeadcanon}`);
     const randomColorIndex = Math.floor(Math.random() * gradientColors.length);
     setButtonGradient(gradientColors[randomColorIndex]);
-  }, [characterName, headcanons, gradientColors]);
+  }, [characterName]);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-black">

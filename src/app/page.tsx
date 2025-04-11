@@ -26,7 +26,7 @@ export default function Home() {
     setHeadcanon(`${prefix} ${selectedHeadcanon}`);
     const randomColorIndex = Math.floor(Math.random() * gradientColors.length);
     setButtonGradient(gradientColors[randomColorIndex]);
-  }, [characterName]);
+  }, [characterName, gradientColors]);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-black">
@@ -91,7 +91,7 @@ export default function Home() {
             </div>
             <div>
               <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">Generate Ideas</h3>
-              <p className="text-gray-600 dark:text-gray-400">Click the "Generate Headcanon" button to receive a random character trait or quirk. Each click generates a new and unique headcanon.</p>
+              <p className="text-gray-600 dark:text-gray-400">Click the &quot;Generate Headcanon&quot; button to receive a random character trait or quirk. Each click generates a new and unique headcanon.</p>
             </div>
             <div>
               <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">Save Your Favorites</h3>
